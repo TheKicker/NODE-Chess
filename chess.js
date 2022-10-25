@@ -9,7 +9,6 @@ game.printToConsole()
  console.log(game.moves())
  rl.question("Please make your move from the array: ", (answer)=> {
     var choice = answer
-    var moves = game.moves()
     game.move(choice, game.moves(choice)[0])
     game.aiMove()
     game.printToConsole()
