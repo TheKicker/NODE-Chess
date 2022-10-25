@@ -1,8 +1,9 @@
 const jsChessEngine = require('js-chess-engine');
-const whiteAiLevel = 3
-const blackAiLevel = 1
 const game = new jsChessEngine.Game()
-var fs = require('fs');
+const fs = require('fs');
+
+const whiteAiLevel = 4
+const blackAiLevel = 0
 
 var notepad = []
 let iter = 0
@@ -25,6 +26,7 @@ function play () {
         console.log(`${status.turn} moves ${ piece } piece to ${ move[piece]}`)
         iter++
         notepad.push(`${iter}. ${ piece } ${ move[piece]} `);
+        game.printToConsole()
         play();
     }
 }
