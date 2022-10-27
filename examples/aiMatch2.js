@@ -16,7 +16,8 @@ function play () {
         game.printToConsole()
         console.log(`${status.turn} is in ${status.checkMate ? 'checkmate' : 'draw'}`)
         notepad.push(`${status.turn} is in ${status.checkMate ? 'checkmate' : 'draw'}`)
-        var file = fs.createWriteStream('games/aiMatch.txt');
+        var d = new Date()
+        var file = fs.createWriteStream(`games/aiMatch-${ d.getTime() }.txt`);
         file.on('error', (err)=> { /* error handling */ console.log("ERROR writing to file. ", err) });
         notepad.forEach((line) =>{ file.write(line) });
         file.end();

@@ -1,4 +1,4 @@
-var readline = require('readline');
+const readline = require('readline');
 const jsChessEngine = require('js-chess-engine');
 const game = new jsChessEngine.Game()
 
